@@ -4,7 +4,7 @@
 
 @layer base {
   @font-face {
-    font-family: "OpenSans";
+    font-family: "Open Sans";
     font-style: normal;
     font-weight: 300;
     src: local("opensans-light"),
@@ -13,7 +13,7 @@
   }
 
   @font-face {
-    font-family: "OpenSans";
+    font-family: "Open Sans";
     font-style: normal;
     font-weight: 400;
     src: local("opensans-regular"),
@@ -22,7 +22,7 @@
   }
 
   @font-face {
-    font-family: "OpenSans";
+    font-family: "Open Sans";
     font-style: normal;
     font-weight: 600;
     src: local("opensans-semibold"),
@@ -31,7 +31,7 @@
   }
 
   @font-face {
-    font-family: "OpenSans";
+    font-family: "Open Sans";
     font-style: normal;
     font-weight: 700;
     src: local("opensans-bold"),
