@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "OpenSans";
+    font-style: normal;
+    font-weight: 300;
+    src: local("opensans-light"),
+      url("/fonts/OpenSans-Light.otf") format("opentype");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "OpenSans";
+    font-style: normal;
+    font-weight: 400;
+    src: local("opensans-regular"),
+      url("/fonts/OpenSans-Regular.otf") format("opentype");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "OpenSans";
+    font-style: normal;
+    font-weight: 600;
+    src: local("opensans-semibold"),
+      url("/fonts/OpenSans-Semibold.otf") format("opentype");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "OpenSans";
+    font-style: normal;
+    font-weight: 700;
+    src: local("opensans-bold"),
+      url("/fonts/OpenSans-Bold.otf") format("opentype");
+    font-display: swap;
+  }
+}
+
+.blue-button {
+  background-color: #3c64b1;
+  color: white;
+  padding: 4px 18px;
+  border-radius: 4px;
+}
+
+.lightgrey-bg {
+  background-color: #dfe1e4;
+}
+
+.darkgrey-bg {
+  background-color: #c4c4c4;
+}
+
+.lightgrey-foot-bg {
+  background-color: #f3f6fa;
+}
+
+.darkgrey-foot-bg {
+  background-color: #eaeef2;
+}
+
+.blue-bg {
+  background-color: #3c64b1;
+}
