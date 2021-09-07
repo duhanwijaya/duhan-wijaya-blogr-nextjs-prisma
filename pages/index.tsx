@@ -1,54 +1,28 @@
-import React from "react"
-import { GetStaticProps } from "next"
-import Layout from "../components/Layout"
-import Post, { PostProps } from "../components/Post"
-import prisma from '../lib/prisma';
+import React from "react";
+import { GetStaticProps } from "next";
+import prisma from "../lib/prisma";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import { LoginBanner } from "../landing/login";
+import { Banner } from "../landing/banner";
+import { ValuePropositionSlider } from "../landing/value-prop";
+import { LocalNews } from "../landing/local-news";
+import { IntlNews } from "../landing/intl-news";
+import { IG } from "../landing/ig";
 
-export const getStaticProps: GetStaticProps = async () => {
-  const feed = await prisma.post.findMany({
-    where: { published: true },
-    include: {
-      author: {
-        select: { name: true },
-      },
-    },
-  });
-  return { props: { feed } };
+const Landing = () => {
+  return (
+    <div className="max-w-xl flex items-center justify-center">
+      <Navbar />
+      <LoginBanner />
+      <Banner />
+      <ValuePropositionSlider />
+      <LocalNews />
+      <IntlNews />
+      <IG />
+      <Footer />
+    </div>
+  );
 };
 
-type Props = {
-  feed: PostProps[]
-}
-
-const Blog: React.FC<Props> = (props) => {
-  return (
-    <Layout>
-      <div className="page">
-        <h1>Public Feed</h1>
-        <main>
-          {props.feed.map((post) => (
-            <div key={post.id} className="post">
-              <Post post={post} />
-            </div>
-          ))}
-        </main>
-      </div>
-      <style jsx>{`
-        .post {
-          background: white;
-          transition: box-shadow 0.1s ease-in;
-        }
-
-        .post:hover {
-          box-shadow: 1px 1px 3px #aaa;
-        }
-
-        .post + .post {
-          margin-top: 2rem;
-        }
-      `}</style>
-    </Layout>
-  )
-}
-
-export default Blog
+export default Landing;
